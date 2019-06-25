@@ -533,7 +533,7 @@ func (s *DB) Debug() *DB {
 
 // Begin begins a transaction
 func (s *DB) Begin() *DB {
-	return s.BeginTx(context.Background(), &sql.TxOptions{})
+	return s.BeginTx(s.ctx, &sql.TxOptions{})
 }
 
 // BeginTx begins a transaction with options
